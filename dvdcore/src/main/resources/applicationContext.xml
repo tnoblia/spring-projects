@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config/>
+	<context:property-placeholder location="classpath:application.properties"/>
+	<context:component-scan base-package="com.mycompany.dvdstore.dvdcore.controller"></context:component-scan>
+	<context:component-scan base-package="com.mycompany.dvdstore.dvdcore.repository.file"></context:component-scan>
+	<context:component-scan base-package="com.mycompany.dvdstore.dvdcore.service.defaults"></context:component-scan>
+	
+	
+<!-- 	
+	<bean id = "movieController" class="com.mycompany.dvdstore.dvdcore.controller.MovieController">
+    	 Instead of writing the following line, we use the autowire that looks for properties in the java class and tries to find the ids with the same property name
+    	<property name = "movieService" ref = "movieService"/>
+    	On peut mettre aussi default-autowire = "byName" dans <beans> pour appliquer à toutes les balises
+    </bean>
+ 
+    <bean id = "movieService" class="com.mycompany.dvdstore.dvdcore.service.DefaultMovieService">
+    	<property name = "movieRepository" ref = "movieRepository"/>
+    </bean>
+    <bean id ="movieRepository" class="com.mycompany.dvdstore.dvdcore.repository.FileMovieRepository">
+    	<property name="fichier" value = "C:\\temp\\movies.csv"></property>
+    </bean>
+    
+     -->
+</beans>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">    <!--   default-autowire = "byName" -->
+<!-- 
+	<context:annotation-config></context:annotation-config>
+	<context:property-placeholder location="classpath:application.properties"/>
+	<context:component-scan base-package="com.mycompany.invoise.core.controller.web"></context:component-scan>
+	<context:component-scan base-package="com.mycompany.invoise.core.service.prefix"></context:component-scan>
+	<context:component-scan base-package="com.mycompany.invoise.core.repository.database"></context:component-scan>
+	 -->
+    <!-- bean class="com.mycompany.invoise.core.controller.InvoiceControllerConsole" >--> <!-- <autowire = "byName"  -->
+    	<!-- Instead of writing the following  line, we use the autowire that looks for properties in the java class and tries to find the ids with the same property name -->
+    	<!-- <property name = "invoiceService" ref = "invoiceService"/> -->
+    	<!-- On peut mettre aussi default-autowire = "byName" dans <beans> pour appliquer à toutes les balises-->
+    	<!-- On peut mettre aussi default-autowire = "byType" dans <beans> pour éviter d'écrire les ids-->
+    	<!-- Mais c'est quand même mieux d'écrire les ids car le code est plus compréhensible  -->
+<!--     	</bean> -->
+<!--     <bean id = "invoiceService" class="com.mycompany.invoise.core.service.InvoiceServicePrefix"> -->
+    	<!-- <property name = "invoiceRepository" ref = "invoiceRepository"/>-->
+    	<!-- <property name = "prefix" value = "NUM_"/> -->
+    	<!-- <property name = "lastNumber" value = "118"/> -->
+<!--     	</bean>
+    <bean id = "invoiceRepository" class="com.mycompany.invoise.core.repository.InvoiceRepositoryMemory">
+    </bean> -->
+</beans>
