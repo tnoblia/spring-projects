@@ -1,20 +1,17 @@
 package com.mycompany.dvdstore.dvdweb.controller;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mycompany.dvdstore.dvdcore.entity.Actor;
 import com.mycompany.dvdstore.dvdcore.entity.Movie;
 import com.mycompany.dvdstore.dvdcore.service.MovieServiceInterface;
 import com.mycompany.dvdstore.dvdweb.form.MovieForm;
@@ -74,12 +71,15 @@ public class MovieController {
 	public ModelAndView addMovie(@Valid @ModelAttribute("movieForm") MovieForm movieForm, BindingResult result) {
 		ModelAndView mv = new ModelAndView();
 		Movie movie = new Movie();
+		mv.addObject("movieForm", movieForm);
 		if(result.hasErrors()) {
 			mv.setViewName("movie-create-form");
 			mv.addObject("movieForm", movieForm);
 			return mv;
 		}
 		mv.setViewName("movie-created");
+		Actor actor = new Actor(movieForm.getActorFirstName(),movieForm.getActorName());
+		movie.setMainActor(actor);
 		movie.setDescription(movieForm.getDescription());
 		movie.setGenre(movieForm.getGenre());
 		movie.setTitle(movieForm.getTitle());

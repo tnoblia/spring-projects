@@ -24,8 +24,15 @@
    <option th:value="ANIMATION" th:text="Animation"></option>
 </select>
 <div th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}"></div>
+
 <p>Description du film : <textarea th:field="*{description}"></textarea></p>
 <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+
+<p>Prénom acteur principal : <textarea th:field="*{actorFirstName}"></textarea></p>
+<div th:if="${#fields.hasErrors('actorFirstName')}" th:errors="*{actorFirstName}"></div>
+
+<p>Nom acteur principal : <textarea th:field="*{actorName}"></textarea></p>
+<div th:if="${#fields.hasErrors('actorName')}" th:errors="*{actorName}"></div>
 <input type = "submit" value ="OK">
 
 </form>

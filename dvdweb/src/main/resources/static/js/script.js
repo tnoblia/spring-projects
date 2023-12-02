@@ -61,6 +61,18 @@ function showDetail(id){
         text = document.createTextNode(`Description: ${res.description}`);
         p.appendChild(text);
         invoiceDetailNode.appendChild(p);
+        
+        p = document.createElement("p");
+		text = document.createTextNode(`Main actor: ${res.mainActor.firstName} ${res.mainActor.lastName}`);
+		p.appendChild(text);
+		invoiceDetailNode.appendChild(p);
+		 
+		p = document.createElement("p");
+		var sum = res.reviews.map((a) => a.mark).reduce((a, b) => a + b, 0);
+		var avg = (sum / res.reviews.length) || 0;
+		text = document.createTextNode(`Mark: ${avg}/5`);
+		p.appendChild(text);
+		invoiceDetailNode.appendChild(p);
 
     });
 }
