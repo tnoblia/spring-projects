@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mycompany.invoise.core.entity.Address;
-import com.mycompany.invoise.core.entity.Customer;
-import com.mycompany.invoise.core.entity.Invoice;
+import com.mycompany.invoise.core.entity.customer.Address;
+import com.mycompany.invoise.core.entity.customer.Customer;
+import com.mycompany.invoise.core.entity.invoice.Invoice;
 import com.mycompany.invoise.core.service.InvoiceServiceInterface;
 import com.mycompany.invoise.invoiseweb.form.InvoiceForm;
 
